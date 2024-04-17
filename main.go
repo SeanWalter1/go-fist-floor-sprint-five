@@ -228,7 +228,7 @@ func main() {
             TrainingType: "Ходьба",
             Action:       20000,
             LenStep:      LenStep,
-            Duration:     3time.Hour + 45time.Minute,
+            Duration:     3*time.Hour + 45*time.Minute,
             Weight:       85,
         },
         Height: 185,
