@@ -224,15 +224,15 @@ func main() {
     fmt.Println(ReadData(swimming))
 
     walking := Walking{
-		Training: Training{
-			TrainingType: "Ходьба",
-			Action:       20000,
-			LenStep:      LenStep,
-			Duration:     3*time.Hour + 45*time.Minute,
-			Weight:       85,
-		},
-		Height: 185,
-	}
+        Training: Training{
+            TrainingType: "Ходьба",
+            Action:       20000,
+            LenStep:      LenStep,
+            Duration:     3time.Hour + 45time.Minute,
+            Weight:       85,
+        },
+        Height: 185,
+    }
 
     fmt.Println(ReadData(walking))
 
