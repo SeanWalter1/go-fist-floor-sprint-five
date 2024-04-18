@@ -102,8 +102,7 @@ type Running struct {
 // Это переопределенный метод Calories() из Training.
 func (r Running) Calories() float64 {
     // вставьте ваш код ниже
-    Speed := r.meanSpeed() * 3.6
-	return ((CaloriesWeightMultiplier*r.Training.Weight + (math.Pow(Speed, 2)/r.Height)*CaloriesSpeedHeightMultiplier*r.Training.Weight) * r.Training.Duration.Hours() * MinInHours)
+    return ((CaloriesMeanSpeedMultiplier*r.meanSpeed() + CaloriesMeanSpeedShift) * r.Weight / MInKm * r.Duration.Hours() * MinInHours)
 }
 
 // TrainingInfo возвращает структуру InfoMessage с информацией о проведенной тренировке.
