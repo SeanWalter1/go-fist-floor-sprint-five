@@ -137,7 +137,7 @@ type Walking struct {
 func (w Walking) Calories() float64 {
     // вставьте ваш код ниже
      speedMsec := w.meanSpeed() * KmHInMsec
-    return ((CaloriesMeanSpeedMultiplier*r.meanSpeed() + CaloriesMeanSpeedShift) * r.Weight / MInKm * r.Duration.Hours() * MinInHours)	    return ((CaloriesMeanSpeedMultiplier*r.meanSpeed() + CaloriesMeanSpeedShift) * r.Weight / MInKm * r.Duration.Hours() * MinInHours)
+    return ((CaloriesWeightMultiplierw.Weight + (math.Pow(speedMsec, 2)/w.HeightCmInM)CaloriesSpeedHeightMultiplierw.Weight) * w.Duration.Hours() * MinInHours)
 }
 
 // TrainingInfo возвращает структуру InfoMessage с информацией о проведенной тренировке.
