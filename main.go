@@ -170,6 +170,9 @@ type Swimming struct {
 // Это переопределенный метод Calories() из Training.
 func (s Swimming) meanSpeed() float64 {
     // вставьте ваш код ниже
+		if s.Duration.Hours() == 0 {
+return 0
+}
     return float64(s.LengthPool) * float64(s.CountPool) / MInKm / float64(s.Training.Duration.Hours())
 }
 
@@ -179,9 +182,6 @@ func (s Swimming) meanSpeed() float64 {
 // Это переопределенный метод Calories() из Training.
 func (s Swimming) Calories() float64 {
     // вставьте ваш код ниже
-	if s.Duration.Hours() == 0 {
-return 0
-}
     return (s.meanSpeed() + SwimmingCaloriesMeanSpeedShift) * SwimmingCaloriesWeightMultiplier * s.Weight * s.Duration.Hours()
 }
 
